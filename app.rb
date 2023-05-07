@@ -1,7 +1,22 @@
 # frozen_string_literal: true
 
+require 'yaml'
+
+require './lib/router'
+
+ROUTES = YAML.load(File.read(File.join(File.dirname(__FILE__), 'app', 'routes.yml')))
+
 class App
-  def call(_env)
-    [200, {}, ['Hello, World!']]
+  attr_reader :router
+
+  def initialize
+    @router = Router.new(ROUTES)
+  end
+
+  def call(env)
+    binding.irb
+    result = router.resolve(env)
+
+    [result.status, result.headers, result.content]
   end
 end
