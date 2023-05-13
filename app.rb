@@ -19,7 +19,6 @@ class App
   end
 
   def call(env)
-    binding.irb
     result = router.resolve(env)
 
     [result.status, result.headers, result.content]
