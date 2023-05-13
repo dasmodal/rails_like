@@ -5,9 +5,11 @@ GEM
     puma (6.2.2)
       nio4r (~> 2.0)
     rack (2.2.7)
+    sequel (5.68.0)
     slim (5.1.0)
       temple (~> 0.10.0)
       tilt (>= 2.0.6, < 2.2)
+    sqlite3 (1.6.2-x86_64-linux)
     temple (0.10.0)
     tilt (2.1.0)
 
@@ -17,7 +19,9 @@ PLATFORMS
 DEPENDENCIES
   puma
   rack
+  sequel
   slim
+  sqlite3
 
 RUBY VERSION
    ruby 3.1.2p20

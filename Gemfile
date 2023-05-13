@@ -6,4 +6,6 @@ ruby '3.1.2'
 
 gem 'puma'
 gem 'rack'
+gem 'sequel'
 gem 'slim'
+gem 'sqlite3'
