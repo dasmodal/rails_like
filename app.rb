@@ -23,4 +23,8 @@ class App
 
     [result.status, result.headers, result.content]
   end
+
+  def self.root
+    File.dirname(__FILE__)
+  end
 end
