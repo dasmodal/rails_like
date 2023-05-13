@@ -13,7 +13,7 @@ class Controller
     send(action)
     self.status = 200
     self.headers = { 'Content-Type' => 'text/html' }
-    self.content = ['Hello world']
+    self.content = [template.render(self)]
     self
   end
 
@@ -27,5 +27,13 @@ class Controller
     self.status = 404
     self.headers = {}
     self.content = ['Nothing found']
+  end
+
+  private
+
+  def template
+    path = File.join(App.root, 'app', 'views', name.to_s, "#{action}.slim")
+
+    Slim::Template.new(path)
   end
 end
