@@ -21,12 +21,14 @@ class Controller
     self.status = 500
     self.headers = {}
     self.content = ['Internal error']
+    self
   end
 
   def not_found
     self.status = 404
     self.headers = {}
     self.content = ['Nothing found']
+    self
   end
 
   private
