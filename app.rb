@@ -12,10 +12,8 @@ end
 
 # require all lib .rb files
 Dir[File.join(File.dirname(__FILE__), 'lib', '*.rb')].each { |file| require_relative file }
-# require all controllers .rb files
-Dir[File.join(File.dirname(__FILE__), 'app', 'controllers', '*.rb')].each { |file| require_relative file }
-# require all models .rb files
-Dir[File.join(File.dirname(__FILE__), 'app', 'models', '*.rb')].each { |file| require_relative file }
+# require all app .rb files
+Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each { |file| require_relative file }
 
 ROUTES = YAML.load(File.read(File.join(File.dirname(__FILE__), 'app', 'routes.yml')))
 
